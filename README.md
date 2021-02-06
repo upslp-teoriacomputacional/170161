@@ -1,225 +1,166 @@
-## JavaScript Program to Illustrate Different Set Operations
+# Instructions
 
-  <li>1. In this example, we have defined two set variables and we have performed different set operations: union, intersection, difference and symmetric difference.,  </li>
-  <li>2. To understand this example, you should have the knowledge of the following JavaScript programming topics:  </li>
-  <li>3. JavaScript Sets  </li>
-  <li>4. JavaScript Input, Output and Import  </li>
-  <li>JavasScript offers a datatype called set whose elements must be unique. It can be used to perform different set operations like union, intersection, difference and symmetric difference. </li>
+1. Program in the assigned programming language (C#, C++, JavaScript, Lua)
+2. The programs are located in the (source_code) folder.
+3. The code must be compiled on any operating system.
+4. The code is uploaded at https://github.com/upslp-teoriacomputacional/170161
+5. Example. 00180864_sets. go
+6. The program will be evaluated according to the rubric attached.
+7. The evidence of the developed program is the template of the commented source code.
+8. You can also show the operation of the programs in the beginning or term of class before the deadline.
 
-</ol>
-Aside: This problem arose during some consulting I was doing, where the integers represented the sizes of different software jobs, and the quadratic term is there because the cost of implementing software goes up faster than linearly with the size of the job. 
+## Rubric
+
+---
+
+#### Functionality:
+
+The program works correctly and all the input variables are validated.
+
+#### Logic reasoning:
+
+It is a very refined compact code.
+
+#### Code structuring:
+
+If you use indentation, spaces and line spacing that gives greater clarity.
+
+#### Documentation:
+
+## The presentation includes the name, surname, major, name of the specialty professor, name of the institution and enrollment, well-defined objectives documented and parts of the well-documented code.
+
+### Help -?
+
+#### <li><em>Programming Languages doc comments.</em>
+
+##### <a href = "https://fsharp.org/learn/">writing F# comments</a>.
+
+##### <a href = "https://perldoc.perl.org/perl.html"> writing Perl comments</a>.
+
+##### <a href = "https://www.rust-lang.org/learn"> writing Rust comments</a>.
+
+### Writing Clear Code
+
+The overarching goal when writing code is to make it easy to read and to understand. Well-written programs are easier to debug, easier to maintain, and have
+fewer errors. Writing a program is a lot like writing an essay. When writing an essay, your message is more convincing when it is accompanied by proper grammar and punctuation. When writing computer programs, you should follow the same principle. It is even more important when programming since someone may be assigned to maintain and support your code for long periods of time. You will appreciate the importance of good style when it is your task to understand and maintain someone else's code!
+
+#### Commenting
+
+Example
+
+<table>
+<TR><TD><pre>
+/*---------------------------------------------------------
+ *  Here is a block comment that draws attention
+ *  to itself.
+ *---------------------------------------------------------*/
+</pre></td></tr>
+</table>
+
+<table>
+<TR><TD><pre>
+/* *****************************************************************************
+ *  Name:    Alan Turing
+ *  NetID:   aturing
+ *  Precept: P00
+ *
+ *  Description:  Prints 'Hello, World' to the terminal window.
+ *                By tradition, this is everyone's first program.
+ *                Prof. Brian Kernighan initiated this tradition in 1974.
+ *
+ *  Written:       5/03/1997
+ *  Last updated:  8/22/2018
+ *
+ *  % python 3 HelloWorld.python
+ *  % pyton HelloWorld
+ *  Hello, World
+ *
+ **************************************************************************** */
+</pre></td></tr>
+</table>
+
+<p><li> Comment every important variable name (including 
+all instance variables).
+
+<table>
+<TR><TD><pre>
+private double rx, ry;    //  position
+private double q;         //  charge
+</pre></td></tr>
+</table>
+
+If you prefer, you may use
+<a href = "https://en.wikipedia.org/wiki/Structured_programming">doc comments</a>.
+
+<table>
+<TR><TD><pre>
+public static void main(String[] args) { 
+   boolean nesting = true;
+   /* /* */ nesting = false; // */ 
+   System.out.println(nesting);
+} 
+</pre></td></tr>
+</table>
+
+<table>
+<TR><TD><pre>
+a*x + b
+</pre></td></tr>
+</table>
+
+<table>
+<TR><TD><pre>
+for(int i=0;i&lt;n;i++)    vs.      for (int i = 0; i < n; i++)
+</pre></td></tr>
+</table>
+
+<table>
+<TR><TD><pre>
+    //This comment has no space           //  This comment has two 
+    //after the delimiter and is          //  spaces after the delimiter
+    //difficult to read.                  //  and is easier to read.
+</pre></td></tr>
+</table>
+
+<table>
+<TR><TD><pre>
+int n      = Integer.parseInt(args[0]);      //  size of population
+int trials = Integer.parseInt(args[1]);      //  number of trials
+</pre></td></tr>
+</table>
+
+<table>
+<TR><TD><pre>
+//  K&R style indenting                   
+public static void  main(String[] args) {
+    System.out.println("Hello, World");
+}
+
+// BSD-Allman style indenting
+public static void main(String[] args)
+{
+System.out.println("Hello, World");
+}
+
+</pre></td></tr>
+</table>
+
+#### References
+
+<p><b>A.</b> <a href = "http://www.cs.princeton.edu/~bwk/tpop.webpage">The Practice
+of Programming</a> by Brian W. Kernighan and Rob Pike is a classic.
+
+<p><b>A.</b><a href = "http://checkstyle.sourceforge.net/">Checkstyle</a>.
+If you followed our Windows, Mac OS X, or Linux instructions, <em>IntelliJ</em> is configured
+to run Checkstyle automatically while you are editing.
+
+<p><b>A.</b><a href = "http://mindprod.com/jgloss/unmain.html">unmaintainable code</a>
+and here's <a href = "http://archive.is/Pn5hH">another</a>.
+
 <p></p>
+Don't be afraid of email harvesting, write your email properly and the page will perform programming obfuscation.
 
-## Source Code
+<a href="" target="\_blank">@</a>
+</small>
 
-```JavaScript
-
-# - 170161-Conjuntos.js *- coding: utf-8 -*-
-"""
-Set Section
-# Program to perform different set operations like in mathematics
-# Find to similar command to other language
-# Rust, F# and Perl
-"""
-
-# define three sets
-global set1
-global set2
-global set3
-
-var set1 = new Set([1, 2, 3, 4, 5]);
-var set2 = new Set([3, 4, 5, 6, 7]);
-var set3 = new Set();
-
-console.log("The set A is : ");
-console.log(conjuntoA);
-console.log("The set B is : ");
-console.log(conjuntoB);
-console.log("The set C is : ");
-console.log(conjuntoC);
-
-
-#%%
-#Remove an item from the set
-function quitar() {
-  const A = new Set([0, 1, 2, 3, 4, 5]);
-  A.delete(2);
-  console.log("The set C is : ");
-  console.log(A);
-}
-
-#%%
-#Remove all items from the set
-function clearSet() {
-  const A = new Set([0, 1, 2, 3, 4, 5]);
-  A.clear();
-  console.log(A);
-}
-
-#%%
-#Copy a set
-function copiar() {
-  const A = new Set([1, 2, 3, 4, 5]);
-  const B = A;
-  console.log("Set A : ");
-  console.log(A);
-  console.log("Compare set B : ");
-  console.log(B);
-}
-
-#%%Add an item
-function agregar() {
-  set2.add(987);
-  console.log("The new set B = ");
-  console.log(set2);
-}
-#%%%
-"""
-Set Operations
-"""
-#%%
-#Union
-function union() {
-  const A = new Set([1, 2, 3, 4, 5]);
-  const B = new Set([3, 4, 5, 6, 7]);
-  const unionSet = A.union(B);
-
-  console.log("The union = ");
-  console.log(unionSet.values());
-}
-#%%
-#Intersection
-Set.prototype.intersection = function (otherSet) {
-  let intersectionSet = new Set();
-
-  for (let elem of otherSet) {
-    if (this.has(elem)) intersectionSet.add(elem);
-  }
-  return intersectionSet;
-};
-
-function interseccion() {
-  const A = new Set([1, 2, 3, 4, 5]);
-  const B = new Set([3, 4, 5, 6, 7]);
-
-  var intersectionSet = A.intersection(B);
-  console.log("The intersection = ");
-  console.log(intersectionSet.values());
-}
-
-#%%
-#Diference
-Set.prototype.difference = function (otherSet) {
-  let differenceSet = new Set();
-
-  for (let elem of this) {
-    if (!otherSet.has(elem)) differenceSet.add(elem);
-  }
-  return differenceSet;
-};
-
-function diferencia() {
-  const A = new Set([1, 2, 3, 4, 5]);
-  const B = new Set([3, 4, 5, 6, 7]);
-  const differenceSet = A.difference(B);
-
-  console.log("The difference : ");
-  console.log(differenceSet);
-  console.log("The intersection : ");
-  console.log(A.difference(B));
-}
-
-#%%
-#Symmetric difference
-function simetrica() {
-  const A = new Set([1, 2, 3, 4, 5]);
-  const B = new Set([3, 4, 5, 6, 7]);
-  const C = new Set();
-
-  const symmetricSet = A.difference(B);
-  console.log("The symmetric_difference : ");
-  console.log(symmetricSet);
-
-  const symmetricSet2 = B.difference(A);
-  console.log("The symmetric_difference : ");
-  console.log(symmetricSet2);
-
-  const symmetricSet3 = A.difference(C);
-  console.log("The symmetric_difference : ");
-  console.log(symmetricSet3);
-
-  const symmetricSet4 = B.difference(C);
-  console.log("The symmetric_difference : ");
-  console.log(symmetricSet4);
-}
-
-#%%
-#Subset
-Set.prototype.subSet = function (otherSet) {
-  // if size of this set is greater than otherSet then it can't be a subset
-  if (this.size > otherSet.size) return false;
-  else {
-    for (var elem of this) {
-      // if any of the element of this is not present in the otherset then return false
-      if (!otherSet.has(elem)) return false;
-    }
-    return true;
-  }
-};
-
-function subconjunto() {
-  const B = new Set([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
-  const A = new Set([1, 2, 3, 4, 5]);
-
-  console.log("The subset : ");
-  console.log(A.subSet(B));
-
-  console.log("The subset : ");
-  console.log(B.subSet(A));
-}
-
-#%%
-#Superset
-Set.prototype.superSet = function (otherSet) {
-  // if size of this set is lesser than otherSet then it can't be a superset
-  if (this.size > otherSet.size) return true;
-  else {
-    for (var elem of this) {
-      // if any of the element of this is not present in the otherset then return false
-      if (!otherSet.has(elem)) return false;
-    }
-    return false;
-  }
-};
-function superconjunto() {
-  const B = new Set([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
-  const A = new Set([1, 2, 3, 4, 5]);
-
-  console.log("The superset : ");
-  console.log(B.superSet(A));
-
-  console.log("The superset : ");
-  console.log(A.superSet(B));
-}
-
-
-```
-
-## Help - ?
-
-In this program, we take two different sets and perform different set operations on them. This can equivalently done by using set methods.
-<small> <a href="" target="\_blank">@</a> for this feature!</small>
-
-Visit <a href="https://github.com/upslp-teoriacomputacional/170161/" target="\_blank"> (Programming set in JavaScri[t]).
-
-<small>@170161<a href="https://github.com/170161" target="\_blank"></a> for the language support! </small>
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+</body>
